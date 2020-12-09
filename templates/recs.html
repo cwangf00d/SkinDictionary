@@ -2,22 +2,23 @@
 
 
 {% block main %}
-    <p>Your tailored recommendations are here.</p>
-                    <table class = "table table-striped">
-                    <thead>
+<div class = "container">
+    <h2 class = "my-default-h2">for you</h2>
+</div>
+                    <table class = "table table-hover">
+                    <thead class = "my-default-h6">
                         <tr>
                             <th>Product</th>
                             <th>Brand</th>
                             <th>Price</th>
-                            <th>Price Range</th>
                             <th>Loves</th>
 
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody class = "my-default-p">
                         <!-- TODO: Loop through the database entries to display them in this table -->
                         {% for product in lowrec%}
-                        <tr>
+                        <tr class = "low-price">
                             <td>
                                 <a href={{product.prod_link}}>{{product.prod_name}}</a>
                             </td>
@@ -26,9 +27,6 @@
                             </td>
                             <td>
                                 {{product.prod_price | usd}}
-                            </td>
-                            <td>
-                                Low
                             </td>
                             <td>
                                 {{product.prod_loves}}
@@ -37,7 +35,7 @@
                         </tr>
                         {% endfor %}
                         {% for product in midrec %}
-                        <tr>
+                        <tr class = "mid-price">
                             <td>
                                 <a href={{product.prod_link}}>{{product.prod_name}}</a>
                             </td>
@@ -46,9 +44,6 @@
                             </td>
                             <td>
                                 {{product.prod_price | usd}}
-                            </td>
-                            <td>
-                                Mid
                             </td>
                             <td>
                                 {{product.prod_loves}}
@@ -57,7 +52,7 @@
                         </tr>
                         {% endfor %}
                         {% for product in highrec %}
-                        <tr>
+                        <tr class = "high-price">
                             <td>
                                 <a href={{product.prod_link}}>{{product.prod_name}}</a>
                             </td>
@@ -66,9 +61,6 @@
                             </td>
                             <td>
                                 {{product.prod_price | usd}}
-                            </td>
-                            <td>
-                                High
                             </td>
                             <td>
                                 {{product.prod_loves}}
