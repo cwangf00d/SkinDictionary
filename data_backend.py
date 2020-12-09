@@ -2,17 +2,16 @@ import csv
 
 from cs50 import SQL
 
+## Setting up the SQLite database
 open("skindict.db", "w").close()
 db = SQL("sqlite:///skindict.db")
-
+# creating the tables
 db.execute("CREATE TABLE users (user_id INTEGER, name TEXT NOT NULL, username TEXT NOT NULL, hash TEXT NOT NULL,user_age INTEGER NOT NULL, user_gender TEXT NOT NULL, user_skintype TEXT NOT NULL, PRIMARY KEY(user_id))")
 db.execute("CREATE TABLE chemicals (chem_id INTEGER, chem_name TEXT NOT NULL, PRIMARY KEY(chem_id))")
 db.execute("CREATE TABLE products (prod_id INTEGER, prod_name TEXT NOT NULL, prod_brand TEXT NOT NULL, prod_price NUMERIC NOT NULL, prod_link TEXT NOT NULL, prod_loves NUMERIC NOT NULL, PRIMARY KEY(prod_id))")
 db.execute("CREATE TABLE symptoms (symp_id INTEGER, symp_name TEXT NOT NULL, PRIMARY KEY(symp_id))")
-db.execute("CREATE TABLE user_requests (request_id INTEGER, user_id INTEGER NOT NULL, symp_id INTEGER NOT NULL, date DATETIME, PRIMARY KEY(request_id), FOREIGN KEY(user_id) REFERENCES users(user_id), FOREIGN KEY(user_id) REFERENCES symptoms(symp_id))")
 db.execute("CREATE TABLE symp_to_chem (symp_id INTEGER NOT NULL, chem_id INTEGER NOT NULL, FOREIGN KEY(symp_id) REFERENCES symptoms(symp_id), FOREIGN KEY(chem_id) REFERENCES chemicals(chem_id))")
 db.execute("CREATE TABLE chem_to_prod (chem_id INTEGER NOT NULL, prod_id INTEGER NOT NULL, FOREIGN KEY(chem_id) REFERENCES chemicals(chem_id), FOREIGN KEY(prod_id) REFERENCES products(prod_id))")
-db.execute("CREATE TABLE user_recs (user_id INTEGER NOT NULL, request_id INTEGER NOT NULL, symp_id INTEGER NOT NULL, prod_id INTEGER NOT NULL, prod_name INTEGER NOT NULL, prod_price NUMERIC NOT NULL, prod_link TEXT NOT NULL, FOREIGN KEY(user_id) REFERENCES users(user_id), FOREIGN KEY(request_id) REFERENCES requests(request_id), FOREIGN KEY(symp_id) REFERENCES symptoms(symp_id), FOREIGN KEY(prod_id) REFERENCES products(prod_id), FOREIGN KEY(prod_name) REFERENCES products(prod_name), FOREIGN KEY(prod_price) REFERENCES products(prod_price), FOREIGN KEY(prod_link) REFERENCES products(prod_link))")
 
 ## WE ARE TRYING TO TRANSFER DATA FROM CSV TO SQL TABLES
 
@@ -24,13 +23,11 @@ with open("data/chem_full.csv", "r") as file1:
         chem_name = row["name"].strip()
         if chem_name != "":
             chem_name_to_id[chem_name] = db.execute("INSERT INTO chemicals (chem_name) VALUES (?)", chem_name)
-
 file1.close()
 
 # Setting up the symptoms table
 symptoms = ['uneven skintone', 'acne', 'dullness', 'dryness', 'redness', 'aging', 'sun protectant', 'wound', 'itchiness', 'oiliness', 'exfoliator/cleanser', 'rough', 'discomfort']
 symp_name_to_id = {}
-
 for symptom in symptoms:
     symp_name_to_id[symptom] = db.execute("INSERT INTO symptoms (symp_name) VALUES (?)", symptom)
 
@@ -71,4 +68,3 @@ with open("data/chem_to_sephora_prod.csv", "r") as file4:
             prod_id = prod_name_to_id[prod_name]
             db.execute("INSERT INTO chem_to_prod (chem_id, prod_id) VALUES (?, ?)", chem_id, prod_id)
 file4.close()
-
