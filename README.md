@@ -23,6 +23,8 @@ Access the completed web application at:
 - **chem_to_sephora_prod.csv**: Created with Numpy and Pandas packages. A compiled table linking 101 chemicals to 300 products from Sephora's best-selling skincare products that the chemicals are found in.
 - **prod_ordinary_full.csv**: Scraped from Deciem's online store for The Ordinary using Beautiful Soup. It contains information about 55 products from The Ordinary's catalogue including their name, url, ingredients, and price.
 - **prod_sephora_full.csv**: Scraped from Sephora's online store for bestselling skincare products using Beautiful Soup. It contains information about 300 of Sephora's best-selling skincare products, including their name, brand, popularity (loves), url, price, and ingredients.
+- **SkinDict.ipynb**: Python notebook, created from Google Colab, used Numpy, Pandas, Beautiful Soup, Re, Requests, JSON, etc. Contains very detailed documentation and run-through of how all of the other tables in this directory were created.
+- **SkinDict.py**: Python file version of SkinDict.ipynb.
 - **symp_to_chem_names.csv**: Created with Numpy and Pandas packages. A compiled table linking 13 common skin conditions/symptoms/needs with the 101 chemicals associated with treating said conditions.
   - list of symptoms used: 
       - uneven skin tone
