@@ -5,85 +5,105 @@
 {% endblock %}
 
 {% block main %}
-    <form action="/request" method="post">
+<div class = "container">
+  <div class = "row">
+    <div class = "col-4 methodology-box">
+      <h5 class = "my-default-h5 pad-h5">How it Works</h5>
+      <p class = "my-default-p">Select the skincare concerns you want product recommendations for, and we'll give you up to 6 products per concern, with 2 products per price bracket.</p>
+      <h5 class = "my-default-h5">Our Method</h5>
+      <p class = "my-default-p">We use a curated database of 101 chemicals, whose functions have been verified by dermatologists and researchers, and 300 of Sephora's best-selling skincare products. Read more about our process <a href = "https://github.com/cwangf00d/SkinDictionary">here!</a></p>
+    </div>
+    <div class = "col-8 login-box">
+      <h2 class = "my-default-h2">Get recs :)</h2>
+      <h5 class = "my-default-h6">What skincare concerns would you like to target?</h5>
+      <form action="/request" method="post">
         <div class="form-check">
-          <input class="form-check-input" type="checkbox" name = "uneven skintone">
-          <label class="form-check-label" for="uneven skintone">
-            Uneven Skin Tone (dark spots, hyperpigmentation)
+          <input class="form-check-input pretty-checkbox" type="checkbox" name = "uneven skintone">
+          <label class="form-check-label pretty-label" for="uneven skintone">
+            Uneven Skin Tone
           </label>
         </div>
         <div class="form-check">
           <input class="form-check-input" type="checkbox" name = "acne">
-          <label class="form-check-label" for="acne">
-            Acne (pimples, cysts, pores, scars)
+          <label class="form-check-label pretty-label" for="acne">
+            Acne
           </label>
         </div>
         <div class="form-check">
           <input class="form-check-input" type="checkbox" name = "dullness">
-          <label class="form-check-label" for="dullness">
+          <label class="form-check-label pretty-label" for="dullness">
             Dullness
           </label>
         </div>
         <div class="form-check">
           <input class="form-check-input" type="checkbox" name = "dryness">
-          <label class="form-check-label" for="dryness">
+          <label class="form-check-label pretty-label" for="dryness">
             Dryness
           </label>
         </div>
         <div class="form-check">
           <input class="form-check-input" type="checkbox" name = "redness">
-          <label class="form-check-label" for="redness">
+          <label class="form-check-label pretty-label" for="redness">
             Redness
           </label>
         </div>
         <div class="form-check">
           <input class="form-check-input" type="checkbox" name = "aging">
-          <label class="form-check-label" for="aging">
-            Aging (fine lines, wrinkles, loose skin)
+          <label class="form-check-label pretty-label" for="aging">
+            Aging
           </label>
         </div>
         <div class="form-check">
           <input class="form-check-input" type="checkbox" name = "sun protectant">
-          <label class="form-check-label" for="sun protectant">
+          <label class="form-check-label pretty-label" for="sun protectant">
             UV Protection
           </label>
         </div>
         <div class="form-check">
           <input class="form-check-input" type="checkbox" name = "wound">
-          <label class="form-check-label" for="wound">
-            Wound (skin injury)
+          <label class="form-check-label pretty-label" for="wound">
+            Wound
           </label>
         </div>
         <div class="form-check">
           <input class="form-check-input" type="checkbox" name = "itchiness">
-          <label class="form-check-label" for="itchiness">
-            Itch (irritation)
+          <label class="form-check-label pretty-label" for="itchiness">
+            Itch
           </label>
         </div>
         <div class="form-check">
           <input class="form-check-input" type="checkbox" name = "oiliness">
-          <label class="form-check-label" for="oiliness">
+          <label class="form-check-label pretty-label" for="oiliness">
             Oiliness
           </label>
         </div>
         <div class="form-check">
           <input class="form-check-input" type="checkbox" name = "exfoliator/cleanser">
-          <label class="form-check-label" for="exfoliator/cleanser">
-            Exfoliating/Cleansing (excess dead skin)
+          <label class="form-check-label pretty-label" for="exfoliator/cleanser">
+            Exfoliating/Cleansing
           </label>
         </div>
         <div class="form-check">
           <input class="form-check-input" type="checkbox" name = "rough">
-          <label class="form-check-label" for="rough">
+          <label class="form-check-label pretty-label" for="rough">
             Rough
           </label>
         </div>
         <div class="form-check">
           <input class="form-check-input" type="checkbox" name = "discomfort">
-          <label class="form-check-label" for="discomfort">
+          <label class="form-check-label pretty-label special-padding" for="discomfort">
             General Discomfort
           </label>
         </div>
-        <button class="btn btn-primary" type="submit">Request</button>
+        <button class="btn login-btn" type="submit">Request</button>
     </form>
+
+    </div>
+
+  </div>
+</div>
+
+
+</div>
+
 {% endblock %}
