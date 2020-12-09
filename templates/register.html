@@ -5,51 +5,59 @@
 {% endblock %}
 
 {% block main %}
-    <form action="/register" method="post">
+<div class = "container">
+  <div class = "row">
+    <div class = "col-4">
+      <h2 class = "my-default-h2">Hey~</h2>
+      <h3 class = "my-default-h3">WE'RE SO HAPPY TO SEE YOU HERE <span class = "melon-accent">:)</span></h3>
+    </div>
+    <div class = "col-8 login-box">
+      <h2 class = "my-default-h2">Sign up</h2>
+      <form action="/register" method="post">
         <div class="form-group">
-            <input autocomplete="off" autofocus class="form-control" name="name" placeholder="Name" type="text">
-        </div>
-        <div class="input-group mb-3">
-          <div class="input-group-prepend">
-            <label class="input-group-text" for="inputGroupSelect01">Gender</label>
+            <input autocomplete="off" autofocus class="form-control pretty-input" name="name" placeholder="Name" type="text">
           </div>
-          <select class="custom-select" id="inputGroupSelect01" name = "gender">
-            <option selected disabled>Select...</option>
-            <option value="female">Female</option>
-            <option value="male">Male</option>
-            <option value="non-binary">Non-binary</option>
-            <option value="prefer not to say">Prefer not to say</option>
-          </select>
-        </div>
-        <div class="form-group">
-            <input autocomplete="off" autofocus class="form-control" name="age" placeholder="Age" type="number">
-        </div>
-        <div class="input-group mb-3">
-          <div class="input-group-prepend">
-            <label class="input-group-text" for="inputGroupSelect01">Skin Type</label>
+        <div class = "row">
+          <div class = "col">
+            <div class="input-group mb-3">
+              <select class="custom-select pretty-input" id="inputGroupSelect01" name = "gender">
+                <option selected disabled>Gender</option>
+                <option value="female">Female</option>
+                <option value="male">Male</option>
+                <option value="non-binary">Non-binary</option>
+                <option value="prefer not to say">Prefer not to say</option>
+              </select>
+              </div>
           </div>
-          <select class="custom-select" id="inputGroupSelect01" name = "skintype">
-            <option selected disabled>Select...</option>
-            <option value="oily">Oily</option>
-            <option value="dry">Dry</option>
-            <option value="combination">Combination</option>
-            <option value="normal">Normal</option>
-            <option value="sensitive">Sensitive</option>
-            <option value="unknown">Unknown</option>
-          </select>
+          <div class = "col">
+            <div class="form-group">
+              <input autocomplete="off" autofocus class="form-control pretty-input" name="age" placeholder="Age" type="number">
+            </div>
+          </div>
         </div>
-        <!--<div class="form-group">-->
-        <!--    <input autocomplete="off" autofocus class="form-control" name="email" placeholder="Email" type="email">-->
-        <!--</div>-->
+            <div class="input-group mb-3">
+              <select class="custom-select pretty-input" id="inputGroupSelect01" name = "skintype">
+                <option selected disabled>Skin Type</option>
+                <option value="oily">Oily</option>
+                <option value="dry">Dry</option>
+                <option value="combination">Combination</option>
+                <option value="normal">Normal</option>
+                <option value="sensitive">Sensitive</option>
+                <option value="unknown">Unknown</option>
+              </select>
+            </div>
         <div class="form-group">
-            <input autocomplete="off" autofocus class="form-control" name="username" placeholder="Username" type="text">
+            <input autocomplete="off" autofocus class="form-control pretty-input" name="username" placeholder="Username" type="text">
         </div>
         <div class="form-group">
-            <input class="form-control" name="password" placeholder="Password" type="password">
+            <input class="form-control pretty-input" name="password" placeholder="Password" type="password">
         </div>
         <div class="form-group">
-            <input class="form-control" name="confirmation" placeholder="Confirm Password" type="password">
+            <input class="form-control pretty-input" name="confirmation" placeholder="Confirm Password" type="password">
         </div>
-        <button class="btn btn-primary" type="submit">Log In</button>
+        <button class="btn login-btn" type="submit">Sign Up</button>
     </form>
+    </div>
+  </div>
+</div>
 {% endblock %}
