@@ -12,6 +12,7 @@ db.execute("CREATE TABLE products (prod_id INTEGER, prod_name TEXT NOT NULL, pro
 db.execute("CREATE TABLE symptoms (symp_id INTEGER, symp_name TEXT NOT NULL, PRIMARY KEY(symp_id))")
 db.execute("CREATE TABLE symp_to_chem (symp_id INTEGER NOT NULL, chem_id INTEGER NOT NULL, FOREIGN KEY(symp_id) REFERENCES symptoms(symp_id), FOREIGN KEY(chem_id) REFERENCES chemicals(chem_id))")
 db.execute("CREATE TABLE chem_to_prod (chem_id INTEGER NOT NULL, prod_id INTEGER NOT NULL, FOREIGN KEY(chem_id) REFERENCES chemicals(chem_id), FOREIGN KEY(prod_id) REFERENCES products(prod_id))")
+db.execute("CREATE TABLE user_requests (request_id INTEGER, user_id INTEGER NOT NULL, symp_id INTEGER NOT NULL, date DATETIME, PRIMARY KEY(request_id), FOREIGN KEY(user_id) REFERENCES users(user_id), FOREIGN KEY(user_id) REFERENCES symptoms(symp_id))")
 
 ## WE ARE TRYING TO TRANSFER DATA FROM CSV TO SQL TABLES
 
