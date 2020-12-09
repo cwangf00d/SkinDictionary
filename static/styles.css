@@ -4,17 +4,13 @@
 
 /* end of fonts importing */
 
- start navigation
+
+/* START of navigation styling */
+start navigation
 .header_area .main-menu .navbar-brand{
     padding: 0 5rem 0 2rem;
     text-align: left;
 }
-.header_area .main-menu .navbar-brand{
-    padding: 0 5rem 0 2rem;
-    text-align: left;
-}
-
-
 
 .header_area .main-menu .navbar {
     padding: 1rem 0rem;
@@ -55,6 +51,15 @@ nav .navbar-brand
     max-width:40%;
     max-height:40%;
 }
+.landing-size
+{
+    max-width:75%;
+    max-height:75%;
+}
+/* END of navigation styling */
+
+
+/* START of main jinja styling from CS50 Finance */
 main .form-control
 {
     /* Center form controls */
@@ -78,34 +83,36 @@ main img
     /* Constrain images on small screens */
     max-width: 100%;
 }
+/* END of main jinja styling from CS50 Finance */
 
-/* main heading styles */
+
+/* START of my main heading styles */
 .my-default-h1 {
     font-family: Work Sans;
     font-style: normal;
     font-weight: 800;
-    font-size: 120px;
+    font-size: 100px;
     line-height: 141px;
 }
 .my-default-h2 {
     font-family: Work Sans;
     font-style: normal;
     font-weight: normal;
-    font-size: 100px;
+    font-size: 80px;
     line-height: 117px;
 }
 .my-default-h3 {
     font-family: Work Sans;
     font-style: normal;
     font-weight: 600;
-    font-size: 52px;
+    font-size: 48px;
     line-height: 61px;
 }
 .my-default-h4 {
     font-family: Work Sans;
     font-style: normal;
     font-weight: normal;
-    font-size: 48px;
+    font-size: 40px;
     line-height: 56px;
 }
 .my-default-h5 {
@@ -115,13 +122,12 @@ main img
     font-size: 36px;
     line-height: 42px;
 
-    color: #A3A5C3;
 }
 .my-default-h6 {
     font-family: Work Sans;
-    font-style: normal;
+    font-style: bold;
     font-weight: 500;
-    font-size: 28px;
+    font-size: 24px;
     line-height: 33px;
 }
 .my-default-p {
@@ -131,4 +137,152 @@ main img
     font-size: 20px;
     line-height: 23px;
 }
-/* end heading area*/
+/* END of my main heading styles */
+
+
+/* START fancy styling for text area */
+.left-align {
+    text-align: left;
+}
+
+.melon-accent {
+    color: #FFC2AD;
+    font-family: Work Sans;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 52px;
+    line-height: 61px;
+}
+
+.pad-h5{
+    padding-top: 40px;
+}
+/* END fancy styling for text area */
+
+
+/* START styling for buttons */
+.landing-button {
+    box-shadow: 0px 0px 16px 0px #ffb76f;
+	background-color:#ffffff;
+	border:4px solid #ffb76f;
+	display:inline-block;
+	cursor:pointer;
+	color:#050505;
+	font-family:Work Sans;
+	font-style: normal;
+	font-size:80px;
+	line-height: 117px;
+	text-decoration:none;
+}
+
+.landing-button:hover {
+	background-color:#ffb76f;
+	text-decoration: none;
+	color: #847E89;
+}
+.landing-button:active {
+	position:relative;
+	top:1px;
+}
+/* END styling for buttons */
+
+
+/* START hyperlink adjustment area */
+a:link {
+        color: #2B2C28;
+      }
+
+/* visited link */
+a:visited {
+        color: #847E89;
+}
+/* mouse over link */
+a:hover {
+        color: #FFB86F;
+}
+/* selected link */
+a:active {
+        color: #C5979D;
+}
+/* END hyperlink adjustment area */
+
+/*START input/form adjustment area */
+.pretty-input{
+    font-family: Work Sans;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 33px;
+
+    color: #A3A5C3;
+}
+.pretty-label {
+    font-family: Work Sans;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 23px;
+}
+.login-box{
+    border: 4px solid #BFCC94;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 4px 10px rgba(191, 204, 148, 0.25);
+    padding-bottom: 20px;
+    padding-top:20px;
+}
+.login-btn{
+    border: 4px solid #000000;
+    box-sizing: border-box;
+    font-family: Work Sans;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 42px;
+}
+
+.login-btn:hover{
+    background-color:#BFCC94;
+	text-decoration: none;
+}
+
+.request-box{
+    border: 4px solid #BFCC94;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 4px 10px rgba(191, 204, 148, 0.25);
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+
+.methodology-box{
+    border: 4px solid #E6CF9E;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 4px 10px rgba(230, 207, 158, 0.25);
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+
+.special-padding {
+    padding-bottom: 16px;
+}
+/*END input/form adjustment area */
+
+
+/* START table styling */
+.low-price {
+    border: 4px solid #E6CF9E;
+    box-sizing: border-box;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.mid-price {
+    border: 4px solid #FFB86F;
+    box-sizing: border-box;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.high-price {
+    border: 4px solid #FFC2AD;
+    box-sizing: border-box;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+/* END table styling */
