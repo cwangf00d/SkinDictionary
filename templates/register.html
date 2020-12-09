@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Register
+{% endblock %}
+
+{% block main %}
+    <form action="/register" method="post">
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="name" placeholder="Name" type="text">
+        </div>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <label class="input-group-text" for="inputGroupSelect01">Gender</label>
+          </div>
+          <select class="custom-select" id="inputGroupSelect01" name = "gender">
+            <option selected disabled>Select...</option>
+            <option value="female">Female</option>
+            <option value="male">Male</option>
+            <option value="non-binary">Non-binary</option>
+            <option value="prefer not to say">Prefer not to say</option>
+          </select>
+        </div>
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="age" placeholder="Age" type="number">
+        </div>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <label class="input-group-text" for="inputGroupSelect01">Skin Type</label>
+          </div>
+          <select class="custom-select" id="inputGroupSelect01" name = "skintype">
+            <option selected disabled>Select...</option>
+            <option value="oily">Oily</option>
+            <option value="dry">Dry</option>
+            <option value="combination">Combination</option>
+            <option value="normal">Normal</option>
+            <option value="sensitive">Sensitive</option>
+            <option value="unknown">Unknown</option>
+          </select>
+        </div>
+        <!--<div class="form-group">-->
+        <!--    <input autocomplete="off" autofocus class="form-control" name="email" placeholder="Email" type="email">-->
+        <!--</div>-->
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="username" placeholder="Username" type="text">
+        </div>
+        <div class="form-group">
+            <input class="form-control" name="password" placeholder="Password" type="password">
+        </div>
+        <div class="form-group">
+            <input class="form-control" name="confirmation" placeholder="Confirm Password" type="password">
+        </div>
+        <button class="btn btn-primary" type="submit">Log In</button>
+    </form>
+{% endblock %}

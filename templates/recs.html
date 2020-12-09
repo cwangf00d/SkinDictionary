@@ -1,0 +1,81 @@
+{% extends "layout.html" %}
+
+
+{% block main %}
+    <p>Your tailored recommendations are here.</p>
+                    <table class = "table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Product</th>
+                            <th>Brand</th>
+                            <th>Price</th>
+                            <th>Price Range</th>
+                            <th>Loves</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- TODO: Loop through the database entries to display them in this table -->
+                        {% for product in lowrec%}
+                        <tr>
+                            <td>
+                                <a href={{product.prod_link}}>{{product.prod_name}}</a>
+                            </td>
+                            <td>
+                                {{ product.prod_brand}}
+                            </td>
+                            <td>
+                                {{product.prod_price | usd}}
+                            </td>
+                            <td>
+                                Low
+                            </td>
+                            <td>
+                                {{product.prod_loves}}
+                            </td>
+
+                        </tr>
+                        {% endfor %}
+                        {% for product in midrec %}
+                        <tr>
+                            <td>
+                                <a href={{product.prod_link}}>{{product.prod_name}}</a>
+                            </td>
+                            <td>
+                                {{ product.prod_brand}}
+                            </td>
+                            <td>
+                                {{product.prod_price | usd}}
+                            </td>
+                            <td>
+                                Mid
+                            </td>
+                            <td>
+                                {{product.prod_loves}}
+                            </td>
+
+                        </tr>
+                        {% endfor %}
+                        {% for product in highrec %}
+                        <tr>
+                            <td>
+                                <a href={{product.prod_link}}>{{product.prod_name}}</a>
+                            </td>
+                            <td>
+                                {{ product.prod_brand}}
+                            </td>
+                            <td>
+                                {{product.prod_price | usd}}
+                            </td>
+                            <td>
+                                High
+                            </td>
+                            <td>
+                                {{product.prod_loves}}
+                            </td>
+
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+{% endblock %}

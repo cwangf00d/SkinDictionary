@@ -1,0 +1,89 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Request
+{% endblock %}
+
+{% block main %}
+    <form action="/request" method="post">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" name = "uneven skintone">
+          <label class="form-check-label" for="uneven skintone">
+            Uneven Skin Tone (dark spots, hyperpigmentation)
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" name = "acne">
+          <label class="form-check-label" for="acne">
+            Acne (pimples, cysts, pores, scars)
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" name = "dullness">
+          <label class="form-check-label" for="dullness">
+            Dullness
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" name = "dryness">
+          <label class="form-check-label" for="dryness">
+            Dryness
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" name = "redness">
+          <label class="form-check-label" for="redness">
+            Redness
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" name = "aging">
+          <label class="form-check-label" for="aging">
+            Aging (fine lines, wrinkles, loose skin)
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" name = "sun protectant">
+          <label class="form-check-label" for="sun protectant">
+            UV Protection
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" name = "wound">
+          <label class="form-check-label" for="wound">
+            Wound (skin injury)
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" name = "itchiness">
+          <label class="form-check-label" for="itchiness">
+            Itch (irritation)
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" name = "oiliness">
+          <label class="form-check-label" for="oiliness">
+            Oiliness
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" name = "exfoliator/cleanser">
+          <label class="form-check-label" for="exfoliator/cleanser">
+            Exfoliating/Cleansing (excess dead skin)
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" name = "rough">
+          <label class="form-check-label" for="rough">
+            Rough
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" name = "discomfort">
+          <label class="form-check-label" for="discomfort">
+            General Discomfort
+          </label>
+        </div>
+        <button class="btn btn-primary" type="submit">Request</button>
+    </form>
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Compare
+{% endblock %}
+
+{% block main %}
+    <form action="/compare" method="post">
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="number" placeholder="Number" type="number">
+        </div>
+        <div class="form-group">
+            <label for="products">Select products to compare </label>
+            <select class="custom-select" name ="products1">
+                    <option value = "" selected disabled>Product 1</option>
+                {% for product in products %}
+                    <option value = {{product.prod_id}}>{{product.prod_name}}</option>
+                {% endfor %}
+            </select>
+            <select class="custom-select" name ="products2">
+                <option value = "" selected disabled>Product 2</option>
+                {% for product in products %}
+                    <option value = {{product.prod_id}}>{{product.prod_name}}</option>
+                {% endfor %}
+            </select>
+            <select class="custom-select" name ="products3">
+                <option value = "" selected disabled>Product 3</option>
+                {% for product in products %}
+                    <option value = {{product.prod_id}}>{{product.prod_name}}</option>
+                {% endfor %}
+            </select>
+            <select class="custom-select" name ="products4">
+                <option value = "" selected disabled>Product 4</option>
+                {% for product in products %}
+                    <option value = {{product.prod_id}}>{{product.prod_name}}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <button class="btn btn-primary" type="submit">Compare</button>
+    </form>
+{% endblock %}

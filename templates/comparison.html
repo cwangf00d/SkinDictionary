@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Comparison
+{% endblock %}
+
+{% block main %}
+<div class="container">
+  <div class={{'row row-cols-' ~ size}}>
+    {% for symptom in products %}
+    {% for product in symptom %}
+        <div class = "col">
+            <div class = "card-body">
+                <h5 class = "card-title">
+                    <a href = {{product.prod_link}}>{{product.prod_name}} </a>
+                </h5>
+                <h6>
+                    {{product.prod_brand}}
+                </h6>
+                <p class = "card-text">
+                    {{product.prod_price | usd}}
+                </p>
+                <p class = "card-text">
+                    {{ product.prod_loves }} loves
+                </p>
+                <p class = "card-text">
+                    {% for chemical in product.prod_chemicals %}
+                    {{chemical.chem_name}},
+                    {% endfor %}
+                </p>
+            </div>
+        </div>
+    {% endfor %}
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

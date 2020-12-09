@@ -1,0 +1,134 @@
+/* trying to import fonts */
+
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300&display=swap');
+
+/* end of fonts importing */
+
+ start navigation
+.header_area .main-menu .navbar-brand{
+    padding: 0 5rem 0 2rem;
+    text-align: left;
+}
+.header_area .main-menu .navbar-brand{
+    padding: 0 5rem 0 2rem;
+    text-align: left;
+}
+
+
+
+.header_area .main-menu .navbar {
+    padding: 1rem 0rem;
+}
+
+.header_area .main-menu .nav-item .nav-link{
+    font: normal 500 36px/2px 'Work Sans', sans-serif;
+
+    text-transform: uppercase;
+
+    padding: 1.7rem;
+    color: #847E89;
+}
+
+/* got a lot of help design wise for the navigation bar from this youtube video: https://www.youtube.com/watch?v=dgKSqz3it50 */
+.header_area .main-menu .navbar-nav .active a{
+    background: linear-gradient(90deg, #BFCC94 0%, #2B2C28 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color:transparent;
+    background-clip: text;
+}
+
+.header_area .main-menu .navbar-nav a:hover{
+    background: linear-gradient(90deg, #BFCC94 0%, #2B2C28 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color:transparent;
+    background-clip: text;
+}
+nav .navbar-brand
+{
+    /* size for brand */
+    font-size: xx-large;
+}
+
+
+.logo
+{
+    max-width:40%;
+    max-height:40%;
+}
+main .form-control
+{
+    /* Center form controls */
+    display: inline-block;
+
+    /* Override Bootstrap's 100% width for form controls */
+    width: auto;
+}
+
+main
+{
+    /* Scroll horizontally as needed */
+    overflow-x: auto;
+
+    /* Center contents */
+    text-align: center;
+}
+
+main img
+{
+    /* Constrain images on small screens */
+    max-width: 100%;
+}
+
+/* main heading styles */
+.my-default-h1 {
+    font-family: Work Sans;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 120px;
+    line-height: 141px;
+}
+.my-default-h2 {
+    font-family: Work Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 100px;
+    line-height: 117px;
+}
+.my-default-h3 {
+    font-family: Work Sans;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 52px;
+    line-height: 61px;
+}
+.my-default-h4 {
+    font-family: Work Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 48px;
+    line-height: 56px;
+}
+.my-default-h5 {
+    font-family: Work Sans;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 42px;
+
+    color: #A3A5C3;
+}
+.my-default-h6 {
+    font-family: Work Sans;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 33px;
+}
+.my-default-p {
+    font-family: Work Sans;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 23px;
+}
+/* end heading area*/
