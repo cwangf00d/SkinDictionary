@@ -39,12 +39,12 @@ Session(app)
 # Configure CS50 Library to use SQLite database
 db = SQL("sqlite:///skindict.db")
 
+# Landing page for when you open the website
 @app.route("/")
 def index():
     return render_template("index.html")
 
-
-
+# Log in page for all users
 @app.route("/login", methods=["GET", "POST"])
 def login():
     """Log user in"""
@@ -80,7 +80,7 @@ def login():
     else:
         return render_template("login.html")
 
-
+# Log out for users
 @app.route("/logout")
 def logout():
     """Log user out"""
@@ -91,7 +91,7 @@ def logout():
     # Redirect user to login form
     return redirect("/")
 
-
+# Where new users can register
 @app.route("/register", methods=["GET", "POST"])
 def register():
     """Register user"""
@@ -120,6 +120,7 @@ def register():
         # Ensure username was submitted
         if not request.form.get("username"):
             return apology("must provide username", 400)
+
         # Query database for username
         rows = db.execute("SELECT * FROM users WHERE username = ?", request.form.get("username"))
         # Ensure username does not already exist
@@ -140,12 +141,14 @@ def register():
 
         t_username = request.form.get("username")
         t_hash = request.form.get("")
+
         # Insert user into users
         db.execute("INSERT INTO users (name, username, hash, user_age, user_gender, user_skintype) VALUES (?, ?, ?, ?, ?, ?)", request.form.get("name"), request.form.get("username"), generate_password_hash(request.form.get("password")), request.form.get("age"), request.form.get("gender"), request.form.get("skintype"))
         return redirect("/login")
     else:
         return render_template("register.html")
 
+# For skincare requests
 @app.route("/request", methods=["GET", "POST"])
 @login_required
 def make_request():
@@ -159,13 +162,20 @@ def make_request():
         all_recs = []
         symptoms = ['uneven skintone', 'acne', 'dullness', 'dryness', 'redness', 'aging', 'sun protectant', 'wound', 'itchiness', 'oiliness', 'exfoliator/cleanser', 'rough', 'discomfort']
         date = datetime.datetime.now()
+
         # getting which symptoms are being requested
         for symptom in symptoms:
             if request.form.get(symptom):
                 user_requests.append(symptom)
                 symptom_id = db.execute("SELECT symp_id FROM symptoms WHERE symp_name = ?", symptom)[0]
                 db.execute("INSERT INTO user_requests (user_id, symp_id, date) VALUES (?, ?, ?)", session["user_id"], symptom_id['symp_id'], date)
+
+        # ensure user selects at least one thing
+        if len(user_requests) == 0:
+            return apology("must select something", 400)
+
         # iterating through symptoms requested to gather products
+        # specifically getting two products per price level
         for req in user_requests:
             low_count = 0
             mid_count = 0
@@ -192,15 +202,15 @@ def make_request():
     else:
         return render_template("request.html")
 
-
+# for comparing <= 4 skincare products
 @app.route("/compare", methods=["GET", "POST"])
 def compare():
     ## allows users to decide, up to 5, skincare products to compare and will provide suggestions of similar products they might want to consider
     if request.method == "POST":
-        # Ensure number was submitted
-        if not request.form.get("number"):
-            return apology("must provide number to compare", 400)
-        # Ensure products were submitted
+        # Ensure number between 1 and 4 was submitted
+        if not request.form.get("number") or not request.form.get("number").isdigit() or int(request.form.get("number")) > 4:
+            return apology("must provide number from 1-4 to compare", 400)
+        # Collect and ensure products were submitted
         prod_inventory = db.execute("SELECT prod_id, prod_name FROM products")
         products = []
         for product in prod_inventory:
@@ -212,30 +222,19 @@ def compare():
                 products.append(product['prod_name'])
             elif request.form.get('products4') and int(request.form.get('products4')) == product['prod_id']:
                 products.append(product['prod_name'])
+        if len(products) == 0:
+            return apology("must select products to compare", 400)
         all_info = []
         for product in products:
             all_info.append(db.execute("SELECT * FROM products WHERE prod_name = ?", product))
         for big_list in all_info:
             for product in big_list:
                 product['prod_chemicals'] = db.execute("SELECT chem_name FROM chemicals WHERE chem_id IN (SELECT chem_id FROM chem_to_prod WHERE prod_id = ?)", product['prod_id'])
-
         return render_template("comparison.html", size = 4, products = all_info)
     else:
+        ## return form with options
         products = db.execute("SELECT * FROM products")
         return render_template("compare.html", size = 4, products = products)
-
-@app.route("/collection", methods=["GET"])
-def collection():
-        return render_template("collection.html")
-
-@app.route("/triangle", methods=["GET"])
-def triangle():
-        return render_template("triangle.html")
-
-@app.route("/vote", methods=["GET", "POST"])
-@login_required
-def vote():
-        return render_template("vote.html")
 
 def errorhandler(e):
     """Handle error"""
