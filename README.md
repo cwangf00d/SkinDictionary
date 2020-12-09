@@ -110,8 +110,8 @@ Upon submission of the compare request, users will be provided a display of card
 ### Logging Out
 To log out of the website, the user can click on "LOGOUT" on the navigation bar in the top right.
 
-## Screenshots
-Screenshots of the webapp's UI are below. To see a high-fidelity mockup of the website, including the fonts, colors, components, logo, favicon, and overall page layout, visit the [Figma](https://www.figma.com/file/EhC7RGB9d2B37BCWMmGgVC/Skin-Dictionary?node-id=2%3A3) file I created. 
+## UI
+To see a high-fidelity mockup of the website, including the fonts, colors, components, logo, favicon, and overall page layout for several of the pages, visit the [Figma](https://www.figma.com/file/EhC7RGB9d2B37BCWMmGgVC/Skin-Dictionary?node-id=2%3A3) file I created. 
 For more information on how the website was put together, visit the DESIGN.md file in the Implementation directory.
 
 ## Built With
