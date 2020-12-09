@@ -1,109 +1,63 @@
 {% extends "layout.html" %}
 
 {% block title %}
-    Request
+    Register
 {% endblock %}
 
 {% block main %}
 <div class = "container">
   <div class = "row">
-    <div class = "col-4 methodology-box">
-      <h5 class = "my-default-h5 pad-h5">How it Works</h5>
-      <p class = "my-default-p">Select the skincare concerns you want product recommendations for, and we'll give you up to 6 products per concern, with 2 products per price bracket.</p>
-      <h5 class = "my-default-h5">Our Method</h5>
-      <p class = "my-default-p">We use a curated database of 101 chemicals, whose functions have been verified by dermatologists and researchers, and 300 of Sephora's best-selling skincare products. Read more about our process <a href = "https://github.com/cwangf00d/SkinDictionary">here!</a></p>
+    <div class = "col-4">
+      <h2 class = "my-default-h2">Hey~</h2>
+      <h3 class = "my-default-h3">WE'RE SO HAPPY TO SEE YOU HERE <span class = "melon-accent">:)</span></h3>
     </div>
     <div class = "col-8 login-box">
-      <h2 class = "my-default-h2">Get recs :)</h2>
-      <h5 class = "my-default-h6">What skincare concerns would you like to target?</h5>
-      <form action="/request" method="post">
-        <div class="form-check">
-          <input class="form-check-input pretty-checkbox" type="checkbox" name = "uneven skintone">
-          <label class="form-check-label pretty-label" for="uneven skintone">
-            Uneven Skin Tone
-          </label>
+      <h2 class = "my-default-h2">Sign up</h2>
+      <form action="/register" method="post">
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control pretty-input" name="name" placeholder="Name" type="text">
+          </div>
+        <div class = "row">
+          <div class = "col">
+            <div class="input-group mb-3">
+              <select class="custom-select pretty-input" id="inputGroupSelect01" name = "gender">
+                <option selected disabled>Gender</option>
+                <option value="female">Female</option>
+                <option value="male">Male</option>
+                <option value="non-binary">Non-binary</option>
+                <option value="prefer not to say">Prefer not to say</option>
+              </select>
+              </div>
+          </div>
+          <div class = "col">
+            <div class="form-group">
+              <input autocomplete="off" autofocus class="form-control pretty-input" name="age" placeholder="Age" type="number">
+            </div>
+          </div>
         </div>
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" name = "acne">
-          <label class="form-check-label pretty-label" for="acne">
-            Acne
-          </label>
+            <div class="input-group mb-3">
+              <select class="custom-select pretty-input" id="inputGroupSelect01" name = "skintype">
+                <option selected disabled>Skin Type</option>
+                <option value="oily">Oily</option>
+                <option value="dry">Dry</option>
+                <option value="combination">Combination</option>
+                <option value="normal">Normal</option>
+                <option value="sensitive">Sensitive</option>
+                <option value="unknown">Unknown</option>
+              </select>
+            </div>
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control pretty-input" name="username" placeholder="Username" type="text">
         </div>
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" name = "dullness">
-          <label class="form-check-label pretty-label" for="dullness">
-            Dullness
-          </label>
+        <div class="form-group">
+            <input class="form-control pretty-input" name="password" placeholder="Password" type="password">
         </div>
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" name = "dryness">
-          <label class="form-check-label pretty-label" for="dryness">
-            Dryness
-          </label>
+        <div class="form-group">
+            <input class="form-control pretty-input" name="confirmation" placeholder="Confirm Password" type="password">
         </div>
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" name = "redness">
-          <label class="form-check-label pretty-label" for="redness">
-            Redness
-          </label>
-        </div>
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" name = "aging">
-          <label class="form-check-label pretty-label" for="aging">
-            Aging
-          </label>
-        </div>
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" name = "sun protectant">
-          <label class="form-check-label pretty-label" for="sun protectant">
-            UV Protection
-          </label>
-        </div>
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" name = "wound">
-          <label class="form-check-label pretty-label" for="wound">
-            Wound
-          </label>
-        </div>
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" name = "itchiness">
-          <label class="form-check-label pretty-label" for="itchiness">
-            Itch
-          </label>
-        </div>
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" name = "oiliness">
-          <label class="form-check-label pretty-label" for="oiliness">
-            Oiliness
-          </label>
-        </div>
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" name = "exfoliator/cleanser">
-          <label class="form-check-label pretty-label" for="exfoliator/cleanser">
-            Exfoliating/Cleansing
-          </label>
-        </div>
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" name = "rough">
-          <label class="form-check-label pretty-label" for="rough">
-            Rough
-          </label>
-        </div>
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" name = "discomfort">
-          <label class="form-check-label pretty-label special-padding" for="discomfort">
-            General Discomfort
-          </label>
-        </div>
-        <button class="btn login-btn" type="submit">Request</button>
+        <button class="btn login-btn" type="submit">Sign Up</button>
     </form>
-
     </div>
-
   </div>
 </div>
-
-
-</div>
-
 {% endblock %}
