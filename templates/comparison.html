@@ -6,24 +6,29 @@
 
 {% block main %}
 <div class="container">
+    <div class = "row">
+        <div class = "col-8">
+            <h2 class = "my-default-h2">your products</h2>
+        </div>
+    </div>
   <div class={{'row row-cols-' ~ size}}>
     {% for symptom in products %}
     {% for product in symptom %}
         <div class = "col">
             <div class = "card-body">
-                <h5 class = "card-title">
+                <h5 class = "card-title my-default-h5">
                     <a href = {{product.prod_link}}>{{product.prod_name}} </a>
                 </h5>
-                <h6>
+                <h6 class = "my-default-h6">
                     {{product.prod_brand}}
                 </h6>
-                <p class = "card-text">
+                <p class = "card-text my-default-p">
                     {{product.prod_price | usd}}
                 </p>
-                <p class = "card-text">
+                <p class = "card-text my-default-p">
                     {{ product.prod_loves }} loves
                 </p>
-                <p class = "card-text">
+                <p class = "card-text my-default-p">
                     {% for chemical in product.prod_chemicals %}
                     {{chemical.chem_name}},
                     {% endfor %}
