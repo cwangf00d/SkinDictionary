@@ -5,11 +5,19 @@
 {% endblock %}
 
 {% block main %}
-    <form action="/compare" method="post">
-        <div class="form-group">
-            <input autocomplete="off" autofocus class="form-control" name="number" placeholder="Number" type="number">
+<div class = "container">
+    <div class = "row">
+        <div class = "col-4 methodology-box">
+            <h5 class = "my-default-h5 pad-h5">What you do:</h5>
+            <p class = "my-default-p">Select up to four products to compare! Enter the number of products you want to compare and select the products from the dropdowns. If you want to compare less than four products, only use as many dropdowns as you need!</p>
         </div>
-        <div class="form-group">
+        <div class = "col-8 login-box">
+            <h2 class = "my-default-h2">Let's compare</h2>
+            <form action="/compare" method="post">
+        <div class="form-group pretty-input">
+            <input autocomplete="off" autofocus class="form-control" name="number" placeholder="Number of products" type="number">
+        </div>
+        <div class="form-group pretty-input">
             <label for="products">Select products to compare </label>
             <select class="custom-select" name ="products1">
                     <option value = "" selected disabled>Product 1</option>
@@ -36,6 +44,9 @@
                 {% endfor %}
             </select>
         </div>
-        <button class="btn btn-primary" type="submit">Compare</button>
+        <button class="btn login-btn" type="submit">Compare</button>
     </form>
+        </div>
+    </div>
+</div>
 {% endblock %}
