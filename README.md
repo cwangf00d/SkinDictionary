@@ -114,6 +114,9 @@ To log out of the website, the user can click on "LOGOUT" on the navigation bar 
 To see a high-fidelity mockup of the website, including the fonts, colors, components, logo, favicon, and overall page layout for several of the pages, visit the [Figma](https://www.figma.com/file/EhC7RGB9d2B37BCWMmGgVC/Skin-Dictionary?node-id=2%3A3) file I created. 
 For more information on how the website was put together, visit the DESIGN.md file in the Implementation directory.
 
+## Video
+A video running through the webapp can be found [here](https://youtu.be/AqmFxCk9fj0)
+
 ## Built With
 - Google Colab
 - VS Code
