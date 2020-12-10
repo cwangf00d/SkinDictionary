@@ -116,6 +116,7 @@ For more information on how the website was put together, visit the DESIGN.md fi
 
 ## Built With
 - Google Colab
+- VS Code
 - CS50 IDE
 - Figma
 
